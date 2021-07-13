@@ -1,7 +1,5 @@
 from tkinter.tix import *
 
-
-
 # ------------------------------------------------------FORM 1 ÜÇÜN PARAMETRLƏR
 root = Tk()
 root.geometry("1920x1080")
@@ -9,47 +7,41 @@ root.geometry("1920x1080")
 root.wm_attributes("-topmost", 1)                                            # Həmişə bütün pəncərələrdən üstdə olur
 root.title("Расчет и конструирование водопропускных труб")
 
-
-def donothing():
-    filewin = Toplevel(root)
-    button = Button(filewin, text="Do nothing button")
-    button.pack()
-
 menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="Создать", command=donothing)
-filemenu.add_command(label="Oткрыть", command=donothing)
-filemenu.add_command(label="Сохранить", command=donothing)
-filemenu.add_command(label="Сохранить как ...", command=donothing)
-filemenu.add_command(label="Расчет конвертировать в <Word>", command=donothing)
-filemenu.add_command(label="Close", command=donothing)
+filemenu.add_command(label="Создать")
+filemenu.add_command(label="Oткрыть")
+filemenu.add_command(label="Сохранить")
+filemenu.add_command(label="Сохранить как ...")
+filemenu.add_command(label="Расчет конвертировать в <Word>")
+filemenu.add_command(label="Close")
 filemenu.add_command(label="Exit", command=root.quit)
 menubar.add_cascade(label="Файл", menu=filemenu)
 
 editmenu = Menu(menubar, tearoff=0)
-editmenu.add_command(label="Карта количества осадок Азербайджана", command=donothing)
-editmenu.add_command(label="Карта количества осадок России", command=donothing)
+editmenu.add_command(label="Карта количества осадок Азербайджана")
+editmenu.add_command(label="Карта количества осадок России")
 menubar.add_cascade(label="Редактирование", menu=editmenu)
 
 toolsmenu = Menu(menubar, tearoff=0)
-toolsmenu.add_command(label="Исползуемый язык", command=donothing)
-toolsmenu.add_command(label="Проект Трубы на <Autocad>", command=donothing)
+toolsmenu.add_command(label="Исползуемый язык")
+toolsmenu.add_command(label="Проект Трубы на <Autocad>")
 menubar.add_cascade(label="Инструменты", menu=toolsmenu)
 
 tipmenu = Menu(menubar, tearoff=0)
-tipmenu.add_command(label="Трапецадальный или трехугольный кювет", command=donothing)
-tipmenu.add_command(label="Полуеруглый кювет", command=donothing)
-tipmenu.add_command(label="Круглая труба", command=donothing)
-tipmenu.add_command(label="Четырехугольная труба", command=donothing)
+tipmenu.add_command(label="Трапецадальный или трехугольный кювет")
+tipmenu.add_command(label="Полуеруглый кювет")
+tipmenu.add_command(label="Круглая труба")
+tipmenu.add_command(label="Четырехугольная труба")
 menubar.add_cascade(label="Тип сооружения", menu=tipmenu)
 
 rascetmenu = Menu(menubar, tearoff=0)
-rascetmenu.add_command(label="Расчет расхода .....", command=donothing)
+rascetmenu.add_command(label="Расчет расхода .....")
 menubar.add_cascade(label="Расчет", menu=rascetmenu)
 
 helpmenu = Menu(menubar, tearoff=0)
-helpmenu.add_command(label="Help Index", command=donothing)
-helpmenu.add_command(label="About...", command=donothing)
+helpmenu.add_command(label="Help Index")
+helpmenu.add_command(label="About...")
 menubar.add_cascade(label="Help", menu=helpmenu)
 
 root.config(menu=menubar)
@@ -70,7 +62,7 @@ ToolTp.bind_widget(But3, balloonmsg="Карта России")
 But3.place(x=80, y=0)
 
 But4 = Button(width=2, height=1, relief='raised', borderwidth=1)
-ToolTp.bind_widget(But4, balloonmsg="Карта Aяербайджана")
+ToolTp.bind_widget(But4, balloonmsg="Карта Aзербайджана")
 But4.place(x=105, y=0)
 
 But5 = Button(width=2, height=1, relief='raised', borderwidth=1)
