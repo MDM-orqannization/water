@@ -1,11 +1,15 @@
 from tkinter.tix import *
 
+
+#wait = input("Press Enter to continue.")
+
 # ------------------------------------------------------FORM 1 ÜÇÜN PARAMETRLƏR
+
 root = Tk()
 root.geometry("1920x1080")
-#root.resizable(0, 0)                                                         # formanın razmerini deyişmeye qadağa qoyur
 root.wm_attributes("-topmost", 1)                                            # Həmişə bütün pəncərələrdən üstdə olur
 root.title("Расчет и конструирование водопропускных труб")
+
 
 menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
