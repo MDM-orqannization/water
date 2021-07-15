@@ -9,8 +9,24 @@ root.geometry("1920x1080")
 root.wm_attributes("-topmost", 1)                                            # Həmişə bütün pəncərələrdən üstdə olur
 root.title("Расчет и конструирование водопропускных труб")
 root.iconname("c:\clone\icon\App.ico")
-#------------------------------------------------------- Meny Bar
 
+#--------------------------------------------------------- kartalari ekrandan silmek ve berpa etmek
+photo = PhotoImage(file=r"c:\clone\icon\Az.gif")
+Az = photo.subsample(1, 1)
+photo = PhotoImage(file=r"c:\clone\icon\Rus.gif")
+Rus = photo.subsample(1, 1)
+def Click_Menu_Edit_Az():
+    def click_button_Az():
+        But7.destroy()
+    But7 = Button(root, width=890, height=550, image=Az, relief='raised', borderwidth=1, command=click_button_Az)
+    But7.place(x=470, y=100)
+def Click_Menu_Edit_Rus():
+    def click_button_Rus():
+        But8.destroy()
+    But8 = Button(root, width=890, height=550, image=Rus, relief='raised', borderwidth=1, command=click_button_Rus)
+    But8.place(x=470, y=100)
+
+#------------------------------------------------------- Meny Bar
 menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="Создать")
@@ -24,12 +40,12 @@ filemenu.add_command(label="Exit", command=root.quit)
 menubar.add_cascade(label="Файл", menu=filemenu)
 
 editmenu = Menu(menubar, tearoff=0)
-editmenu.add_command(label="Карта количества осадок Азербайджана")
-editmenu.add_command(label="Карта количества осадок России")
+editmenu.add_command(label="Карта количества осадок Азербайджана", command=Click_Menu_Edit_Az)
+editmenu.add_command(label="Карта количества осадок России", command=Click_Menu_Edit_Rus)
 menubar.add_cascade(label="Редактирование", menu=editmenu)
 
 toolsmenu = Menu(menubar, tearoff=0)
-toolsmenu.add_command(label="Исползуемый язык")
+toolsmenu.add_command(label="Переключение языков")
 toolsmenu.add_command(label="Проект Трубы на <Autocad>")
 menubar.add_cascade(label="Инструменты", menu=toolsmenu)
 
@@ -63,41 +79,19 @@ But2.place(x=26, y=0)
 
 photo = PhotoImage(file=r"c:\clone\icon\Azerb_flaq.png")
 photoimage3 = photo.subsample(2, 2)
-But3 = Button(root, width=20, height=20, image=photoimage3, relief='raised', borderwidth=1)
+But3 = Button(root, width=20, height=20, image=photoimage3, relief='raised', borderwidth=1, command=Click_Menu_Edit_Az)
 But3.place(x=70, y=0)
 
 photo = PhotoImage(file=r"c:\clone\icon\Russia_flag.png")
 photoimage4 = photo.subsample(1, 1)
-But4 = Button(root, width=20, height=20, image=photoimage4, relief='raised', borderwidth=1)
+But4 = Button(root, width=20, height=20, image=photoimage4, relief='raised', borderwidth=1, command=Click_Menu_Edit_Rus)
 But4.place(x=95, y=0)
 
 photo = PhotoImage(file=r"c:\clone\icon\Run_rasxod.png")
 photoimage5 = photo.subsample(1, 1)
 But5 = Button(root, width=20, height=20, image=photoimage5, relief='raised', borderwidth=1)
 But5.place(x=140, y=0)
-
-photo = PhotoImage(file=r"c:\clone\icon\Rascet_ico.png")
-photoimage6 = photo.subsample(2, 2)
-But6 = Button(root, width=20, height=20, image=photoimage6, relief='raised', borderwidth=1)
-But6.place(x=185, y=0)
-
 #------------------------------------------------------------------------------------------------------------
-
-def click_button_Az():
-    But7.destroy()
-def click_button_Rus():
-    But8.destroy()
-
-photo = PhotoImage(file=r"c:\clone\icon\Rus.gif")
-Az = photo.subsample(1, 1)
-But7 = Button(root, width=890, height=550, image=Az, relief='raised', borderwidth=1, command=click_button_Az)
-But7.place(x=470, y=100)
-
-photo = PhotoImage(file=r"c:\clone\icon\Az.gif")
-Rus = photo.subsample(1, 1)
-But8 = Button(root, width=890, height=550, image=Rus, relief='raised', borderwidth=1, command=click_button_Rus)
-But8.place(x=470, y=100)
-
 
 
 root.mainloop()
