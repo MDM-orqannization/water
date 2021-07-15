@@ -2,7 +2,11 @@ from tkinter import Tk
 from tkinter.tix import Menu
 from tkinter import Button
 from tkinter import PhotoImage
+from tkinter import filedialog
+
+
 from PIL import ImageTk, Image
+
 # ------------------------------------------------------FORM 1 ÜÇÜN PARAMETRLƏR
 root = Tk()
 root.geometry("1920x1080")
