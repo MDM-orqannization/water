@@ -1,14 +1,17 @@
-from tkinter.tix import *
+from tkinter import Tk
+from tkinter.tix import Menu
+from tkinter import Button
+from tkinter import PhotoImage
 
 
-#wait = input("Press Enter to continue.")
 
 # ------------------------------------------------------FORM 1 ÜÇÜN PARAMETRLƏR
-
 root = Tk()
 root.geometry("1920x1080")
 root.wm_attributes("-topmost", 1)                                            # Həmişə bütün pəncərələrdən üstdə olur
 root.title("Расчет и конструирование водопропускных труб")
+root.iconname("c:\clone\icon\App.ico")
+
 
 
 menubar = Menu(root)
@@ -50,29 +53,36 @@ menubar.add_cascade(label="Help", menu=helpmenu)
 
 root.config(menu=menubar)
 
-
 ##----------------------------------------------------------------------------------------------------
-ToolTp = Balloon()
-But1 = Button(width=2, height=1, relief='raised', borderwidth=1)
-ToolTp.bind_widget(But1, balloonmsg="Создат проект")
+photo = PhotoImage(file = r"c:\clone\icon\Sozdat_file.png")
+photoimage1 = photo.subsample(1, 1)
+But1 = Button(root, width=20, height=20, image=photoimage1, relief='raised', borderwidth=1)
 But1.place(x=1, y=0)
 
-But2 = Button(width=2, height=1, relief='raised', borderwidth=1)
-ToolTp.bind_widget(But2, balloonmsg="Сохранить проект")
+photo = PhotoImage(file=r"c:\clone\icon\Soxranit_file.png")
+photoimage2 = photo.subsample(1, 1)
+But2 = Button(root, width=20, height=20, image=photoimage2, relief='raised', borderwidth=1)
 But2.place(x=26, y=0)
 
-But3 = Button(width=2, height=1, relief='raised', borderwidth=1)
-ToolTp.bind_widget(But3, balloonmsg="Карта России")
-But3.place(x=80, y=0)
+photo = PhotoImage(file=r"c:\clone\icon\Azerb_flaq.png")
+photoimage3 = photo.subsample(2, 2)
+But3 = Button(root, width=20, height=20, image=photoimage3, relief='raised', borderwidth=1)
+But3.place(x=70, y=0)
 
-But4 = Button(width=2, height=1, relief='raised', borderwidth=1)
-ToolTp.bind_widget(But4, balloonmsg="Карта Aзербайджана")
-But4.place(x=105, y=0)
+photo = PhotoImage(file=r"c:\clone\icon\Russia_flag.png")
+photoimage4 = photo.subsample(1, 1)
+But4 = Button(root, width=20, height=20, image=photoimage4, relief='raised', borderwidth=1)
+But4.place(x=95, y=0)
 
-But5 = Button(width=2, height=1, relief='raised', borderwidth=1)
-ToolTp.bind_widget(But5, balloonmsg="Расчет пропускной способности трубы")
+photo = PhotoImage(file=r"c:\clone\icon\Run_rasxod.png")
+photoimage5 = photo.subsample(1, 1)
+But5 = Button(root, width=20, height=20, image=photoimage5, relief='raised', borderwidth=1)
 But5.place(x=140, y=0)
 
+photo = PhotoImage(file=r"c:\clone\icon\Rascet_ico.png")
+photoimage6 = photo.subsample(2, 2)
+But6 = Button(root, width=20, height=20, image=photoimage6, relief='raised', borderwidth=1)
+But6.place(x=185, y=0)
 
 
 
