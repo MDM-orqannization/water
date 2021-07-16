@@ -2,23 +2,48 @@ from tkinter import Tk
 from tkinter.tix import Menu
 from tkinter import Button
 from tkinter import PhotoImage
-from tkinter import filedialog
-
-
-from PIL import ImageTk, Image
+from tkinter import Label
+from tkinter import filedialog as fd
+from pymysql import *
+from tkinter import ttk
+from tkinter.messagebox import showinfo
 
 # ------------------------------------------------------FORM 1 ÜÇÜN PARAMETRLƏR
 root = Tk()
 root.geometry("1920x1080")
 root.wm_attributes("-topmost", 1)                                            # Həmişə bütün pəncərələrdən üstdə olur
 root.title("Расчет и конструирование водопропускных труб")
-root.iconname("c:\clone\icon\App.ico")
+root.iconname("c:\\clone\\icon\\App.ico")
+
+
+my_label = Label(root, text="sssssssssssssssss")
+my_label.place(x=600, y=600)
+
+
+
+
+
+
+
+
 
 #--------------------------------------------------------- kartalari ekrandan silmek ve berpa etmek
 photo = PhotoImage(file=r"c:\clone\icon\Az.gif")
 Az = photo.subsample(1, 1)
 photo = PhotoImage(file=r"c:\clone\icon\Rus.gif")
 Rus = photo.subsample(1, 1)
+
+def files_open():
+    filetypes1 = (('text files', '*.txt'), ('water files', '*.wat'), ('All files', '*.*'))
+    root.filename = fd.askopenfilename(initialdir="c:\\clone\\Documents", filetypes=filetypes1,
+                                       title="Создайте каталог для проекта")
+    my_label.Text = root.filename
+    my_label.place(x=600, y=600)
+
+B1 = Button(root, text="File_open", command=files_open)
+B1.place(x=500, y=500)
+
+
 def Click_Menu_Edit_Az():
     def click_button_Az():
         But7.destroy()
@@ -33,11 +58,10 @@ def Click_Menu_Edit_Rus():
 #------------------------------------------------------- Meny Bar
 menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="Создать")
-
-filemenu.add_command(label="Oткрыть")
-filemenu.add_command(label="Сохранить")
-filemenu.add_command(label="Сохранить как ...")
+filemenu.add_command(label="Создать", command=files_open)
+filemenu.add_command(label="Oткрыть", command=files_open)
+filemenu.add_command(label="Сохранить", command=files_open)
+filemenu.add_command(label="Сохранить как ...", command=files_open)
 filemenu.add_command(label="Расчет конвертировать в <Word>")
 filemenu.add_command(label="Close")
 filemenu.add_command(label="Exit", command=root.quit)
@@ -79,7 +103,7 @@ But1.place(x=1, y=0)
 photo = PhotoImage(file=r"c:\clone\icon\Soxranit_file.png")
 photoimage2 = photo.subsample(1, 1)
 But2 = Button(root, width=20, height=20, image=photoimage2, relief='raised', borderwidth=1)
-But2.place(x=26, y=0)
+But2.place(x=28, y=0)
 
 photo = PhotoImage(file=r"c:\clone\icon\Azerb_flaq.png")
 photoimage3 = photo.subsample(2, 2)
@@ -91,8 +115,8 @@ photoimage4 = photo.subsample(1, 1)
 But4 = Button(root, width=20, height=20, image=photoimage4, relief='raised', borderwidth=1, command=Click_Menu_Edit_Rus)
 But4.place(x=95, y=0)
 
-photo = PhotoImage(file=r"c:\clone\icon\Run_rasxod.png")
-photoimage5 = photo.subsample(1, 1)
+photo = PhotoImage(file=r"c:\clone\icon\Rascet_ico.png")
+photoimage5 = photo.subsample(2,2)
 But5 = Button(root, width=20, height=20, image=photoimage5, relief='raised', borderwidth=1)
 But5.place(x=140, y=0)
 #------------------------------------------------------------------------------------------------------------
